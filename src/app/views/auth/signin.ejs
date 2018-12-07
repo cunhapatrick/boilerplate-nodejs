@@ -1,0 +1,26 @@
+<% extends "layout/auth.njk" %>
+<% block body %>
+  <form action="/signin" method="post">
+    <img src="/images/logo.svg" height="42" />
+
+    <% include 'partials/flash.njk' %>
+
+    <input type="email" name="email" placeholder="Seu e-mail" />
+    <input type="password" name="password" placeholder="Senha secreta" />
+
+    <button type="submit">Logar</button>
+
+    <a href="/signup">Criar conta gratis</a>
+  </form>
+
+  <script type="text/javascript">
+    var avatarInput = document.getElementById('avatar')
+    var img = document.querySelector('label[for=avatar] img')
+
+
+    avatarInput.onchange = function(e) {
+      img.classList.add('preview')
+      img.src = URL.createObjectURL(e.target.files[0])
+    }
+  </script>
+<% endblock %>
