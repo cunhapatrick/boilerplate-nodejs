@@ -1,4 +1,6 @@
-# Initial Steps to build a simmilar project
+# Nodejs/Express Boilerplate with view templates
+
+## Initial Steps to build a simmilar project
 
 1. Run `yarn init -y` to build the package.json of the project.
 2. Open package.json and add the following script
@@ -13,25 +15,25 @@
 4. Run `yarn add bcryptjs express express-session session-file-store nunjucks pg multer`
 5. Run `npx sequelize init` and configure the created files
 
-## Database
+### Database
 
 The project is using postgres as database storage
 
-## Sequelize
+### Sequelize
 
 The ORM module to manipulate the database, migrations and seeds without using raw sql and
 
-## Multer
+### Multer
 
 Module responsable to manage the upload of files
 
-## Session-file-store
+### Session-file-store
 
 Module responsable to manager and generate temporary fisical json file to store active sessions of users inside the server
 
-## View
+### View
 
-### Structure
+#### Structure
 
 1. auth -> views of login and register user
 2. layout -> layout template pattern of most views
