@@ -1,0 +1,22 @@
+extends ../layout/auth
+block body
+  form(action="/signin", method="post")
+    img(src="/images/logo.svg" height="42")/
+
+    include ../partials/flash
+
+    input(type="email", name="email", placeholder="Seu e-mail")/
+    input(type="password", name="password", placeholder="Senha secreta")/
+
+    button(type="submit") Logar
+
+    a(href="/signup") Criar conta gratis 
+
+  script(type="text/javascript").
+    const avatarInput = document.getElementById('avatar')
+    const img = document.querySelector('label[for=avatar] img')
+
+    avatarInput.onchange = function(e) {
+      img.classList.add('preview')
+      img.src = URL.createObjectURL(e.target.files[0])
+    }

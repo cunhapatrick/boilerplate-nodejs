@@ -57,7 +57,9 @@ class App {
     // make the public directory visible to express
     this.express.use(express.static(path.resolve(__dirname, 'public')))
     // declare the engine to render the views
-    this.express.set('view engine', 'ejs')
+    this.express.set('view engine', 'pug')
+    // set views directory
+    this.express.set('views', path.resolve(__dirname, 'app', 'views'))
   }
 
   // method to treat routes

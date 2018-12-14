@@ -1,0 +1,28 @@
+extends ../layout/auth
+block body
+  form(action="/signup", enctype="multipart/form-data", method="post")
+    include ../partials/flash
+    
+    label(for="avatar"): img(src='/images/avatar.svg' height="24")/
+
+    input(id="avatar", name="avatar", type="file")/
+
+    input(type="text", name="name", placeholder="Nome Completo")/
+    input(type="email", name="email", placeholder="Seu e-mail")/
+    input(type="password", name="password", placeholder="Senha secreta")/
+
+    label(for="provider") Sou cabelereiro
+      input(type="checkbox", id="provider", name="provider", value="1")/
+      
+    button(type="submit") Criar conta
+
+    a(href="/") Já possuo conta
+
+  script(type="text/javascript").
+    const avatarInput = document.getElementById('avatar')
+    const img = document.querySelector('label[for=avatar] img')
+
+    avatarInput.onchange = function(e) {
+      img.classList.add('preview')
+      img.src = URL.createObjectURL(e.target.files[0])
+    }
